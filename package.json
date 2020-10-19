@@ -1,0 +1,29 @@
+{
+  "name": "eslint_prettier_husky",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.0.0-1",
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "lint": "eslint src --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"이것은 커밋전에 출력됨\""
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+        "eslint --fix",
+        "prettier --write",
+        "git add"
+    ]
+  }
+}
